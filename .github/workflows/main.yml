@@ -1,4 +1,4 @@
-name: Build Android APK
+name: Build Leo APK
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4  # अपडेटेड v4
 
       - name: Build with Buildozer
         uses: ArtemSerebrennikov/buildozer-action@v1
@@ -23,7 +23,7 @@ jobs:
           package_domain: org.leo
 
       - name: Upload APK
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4  # यहाँ v3 की जगह v4 कर दिया है
         with:
           name: Leo-AI-Package
           path: bin/*.apk
