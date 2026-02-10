@@ -11,9 +11,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4  # अपडेटेड v4
+        uses: actions/checkout@v4
 
       - name: Build with Buildozer
+        # यहाँ स्पेलिंग एकदम सही है, इसे ध्यान से कॉपी करें
         uses: ArtemSerebrennikov/buildozer-action@v1
         with:
           buildozer_version: master
@@ -23,7 +24,8 @@ jobs:
           package_domain: org.leo
 
       - name: Upload APK
-        uses: actions/upload-artifact@v4  # यहाँ v3 की जगह v4 कर दिया है
+        # यहाँ v4 इस्तेमाल किया है जो एरर नहीं देगा
+        uses: actions/upload-artifact@v4
         with:
           name: Leo-AI-Package
           path: bin/*.apk
